@@ -1,0 +1,9 @@
+/* ----------------- Footer ----------------- */
+.footer {
+  margin-top: 50px;
+  padding: 25px;
+  text-align: center;
+  background: linear-gradient(90deg, #133b6a, #5291d9);
+  color: #fff;
+  font-size: 18px;
+}
