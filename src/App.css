@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* ==================== Desktop Layout ==================== */
 .first_page {
   display: flex;
   height: 100vh;
@@ -15,7 +16,7 @@
   color: white;
   overflow: hidden; 
   background-color: rgb(185, 186, 187);
-  /* position: relative; */
+  position: relative;
 }
 
 .first_page::before {
@@ -26,31 +27,7 @@
   width: 100%;
   height: 100%;
   backdrop-filter: blur(10px);
-}
-
-.first_page h1 {
-  position: relative;
-  z-index: 1;
-}
-
-.get-started-btn {
-  background-color:#EFC16B;
-  /* color: white; */
-  color: black;
-  border: none;
-  padding: 20px 40px;
-  font-size: 19px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.get-started-btn:hover {
-  background-color: #c1974a;
-}
-
-.getstarted_btn {
-  text-align: center;
-  font-size: 30px;
+  z-index: 0;
 }
 
 .main_event {
@@ -62,28 +39,8 @@
   backdrop-filter: blur(7px);
   gap: 100px;
   background-color: rgba(51, 61, 80, 0.7);
-}
-
-.aboutus_main {
-  width: 800px;
-  color: white;
-  /* background-color: rgba(0,0,0,0.1); */
-
-}
-
-.aboutus_container {
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  text-align: justify;
-}
-
-.aboutus_container p {
-  font-size: 23px;
-  font-weight: 700;
-  
-
+  position: relative;
+  z-index: 1;
 }
 
 .first_page_name_btn {
@@ -102,8 +59,47 @@
 
 .first_page_name_btn p {
   font-size: 26px;
+  text-align: center;
 }
 
+.getstarted_btn {
+  text-align: center;
+  font-size: 30px;
+}
+
+.get-started-btn {
+  background-color: #EFC16B;
+  color: black;
+  border: none;
+  padding: 20px 40px;
+  font-size: 19px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.get-started-btn:hover {
+  background-color: #c1974a;
+}
+
+.aboutus_main {
+  width: 800px;
+  color: white;
+}
+
+.aboutus_container {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: justify;
+}
+
+.aboutus_container p {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+/* Event list container (ConferenceEvent) */
 .event-list-container {
   position: absolute;
   overflow-x: hidden;
@@ -128,4 +124,117 @@
 
 .budget_sentence {
   font-size: 29px;
+}
+
+/* ==================== Mobile / Tablet Responsive ==================== */
+/* Tablets */
+@media (max-width: 768px) {
+  .main_event {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: auto;
+    align-items: center; /* center content */
+  }
+
+  /* Header stays first */
+  .first_page_name_btn {
+    order: 0;
+    width: 100%;
+    max-width: 600px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* About Us comes after header */
+  .aboutus_main {
+    order: 1;
+    width: 100%;
+    max-height: 300px; /* optional scroll if content too long */
+    overflow-y: auto;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    color: white;
+  }
+
+  /* Get Started button at bottom */
+  .getstarted_btn {
+    order: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .first_page_name_btn h1 {
+    font-size: 32px;
+    word-wrap: break-word;
+  }
+
+  .first_page_name_btn p {
+    font-size: 20px;
+    word-wrap: break-word;
+  }
+
+  .get-started-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+
+  .aboutus_container p {
+    font-size: 16px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .main_event {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    height: auto;
+    align-items: center;
+  }
+
+  .first_page_name_btn {
+    order: 0;
+    width: 100%;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .aboutus_main {
+    order: 1;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 8px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    color: white;
+  }
+
+  .getstarted_btn {
+    order: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .first_page_name_btn h1 {
+    font-size: 26px;
+  }
+
+  .first_page_name_btn p {
+    font-size: 16px;
+  }
+
+  .get-started-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  .aboutus_container p {
+    font-size: 14px;
+  }
 }

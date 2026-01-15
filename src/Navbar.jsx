@@ -13,9 +13,23 @@ const Navbar = ({ navigateToProducts }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Logo behaves exactly like "Get Started" buttons
+  const scrollToTopLikeGetStarted = () => {
+    // Use the same smooth scroll logic
+    navigateToProducts(".main_container");
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="navbar_event_conference">
-      <div className="company_logo">Conference Planner</div>
+      {/* Logo clickable */}
+      <div
+        className="company_logo"
+        onClick={scrollToTopLikeGetStarted}
+        style={{ cursor: "pointer" }}
+      >
+        Conference Planner
+      </div>
       
       <button 
         className={`mobile_menu_btn ${isMenuOpen ? 'active' : ''}`}

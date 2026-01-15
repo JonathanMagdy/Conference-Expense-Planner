@@ -1,43 +1,37 @@
-/* ================= Mobile Responsive Fix ================= */
-@media (max-width: 768px) {
-
-  .pricing-app {
-    width: 100vw;
-    height: auto;
-    min-height: 100vh;
-    padding: 15px;
-    align-items: flex-start;
-  }
-
-  .display_box {
-    width: 100%;
-    padding: 25px 15px;
-    border-radius: 12px;
-  }
-
-  .pricing-app h2 {
-    font-size: 38px;
-  }
-
-  .pricing-app .preheading {
-    font-size: 18px;
-  }
-
+.pricing-app {
+  display: flex;
+  justify-content: center; /* center the box horizontally */
+  align-items: center; /* optional: center vertically if full viewport height */
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: 15px;
 }
 
-/* Small phones */
-@media (max-width: 480px) {
+.display_box {
+  width: 100%;
+  max-width: 600px; /* optional: keep box from being too wide */
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center; /* center all text inside */
+}
 
-  .display_box {
-    padding: 20px 12px;
-  }
+.header {
+  margin-bottom: 20px;
+}
 
-  .pricing-app h2 {
-    font-size: 32px;
-  }
+.header .preheading {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
 
-  .pricing-app .preheading {
-    font-size: 16px;
-  }
+.price {
+  font-size: 48px;
+  margin: 10px 0 20px;
+}
 
+.render_items {
+  margin-top: 20px;
+  width: 100%;
 }
