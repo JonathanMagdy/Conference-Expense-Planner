@@ -83,10 +83,26 @@ const ConferenceEvent = () => {
   const totalCosts = { venue: venueTotalCost, av: avTotalCost, meals: mealsTotalCost };
 
   // Smooth scroll when clicking navbar
-  const navigateToProducts = (idType) => {
+const navigateToProducts = (idType) => {
+  // in case the details page is open, close it first
+  if (showItems) {
+    setShowItems(false);
+
+    // the page loading takes some time, so we use setTimeout then scroll
+    setTimeout(() => {
+      const section = document.querySelector(idType);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 200);
+  } else {
     const section = document.querySelector(idType);
-    if (section) section.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+};
+
 
   // Parallax-style horizontal shift
   useEffect(() => {
